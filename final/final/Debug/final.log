@@ -1,0 +1,12 @@
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  final.cpp
+  Generando código...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+final.obj : error LNK2028: se hace referencia al símbolo (token) sin resolver (0A000492) "void __cdecl OpcionContinuar(void)" (?OpcionContinuar@@$$FYAXXZ) en la función "void __cdecl OpcionMenu(int)" (?OpcionMenu@@$$FYAXH@Z)
+final.obj : error LNK2019: símbolo externo "void __cdecl OpcionContinuar(void)" (?OpcionContinuar@@$$FYAXXZ) sin resolver al que se hace referencia en la función "void __cdecl OpcionMenu(int)" (?OpcionMenu@@$$FYAXH@Z)
+    Sugerencia sobre los símbolos definidos que podrían coincidir:
+      "void __cdecl OpcionContinuar(int)" (?OpcionContinuar@@$$FYAXH@Z)
+      "void __cdecl OpcionContinuar(int)" (?OpcionContinuar@@YAXH@Z)
+C:\Users\mauri\source\repos\final\Debug\final.exe : fatal error LNK1120: 2 externos sin resolver

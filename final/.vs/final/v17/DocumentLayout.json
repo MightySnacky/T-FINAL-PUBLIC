@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mauri\\OneDrive\\Escritorio\\PruebaGit\\final\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A213121-8412-4F91-B519-C02086E41C76}|final\\final.vcxproj|C:\\Users\\mauri\\OneDrive\\Escritorio\\PruebaGit\\final\\final\\final.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2A213121-8412-4F91-B519-C02086E41C76}|final\\final.vcxproj|solutionrelative:final\\final.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "final.cpp",
+              "DocumentMoniker": "C:\\Users\\mauri\\OneDrive\\Escritorio\\PruebaGit\\final\\final\\final.cpp",
+              "RelativeDocumentMoniker": "final\\final.cpp",
+              "ToolTip": "C:\\Users\\mauri\\OneDrive\\Escritorio\\PruebaGit\\final\\final\\final.cpp",
+              "RelativeToolTip": "final\\final.cpp",
+              "ViewState": "AQIAADYKAAAAAAAAAADwv0IKAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-03T22:53:53.705Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
