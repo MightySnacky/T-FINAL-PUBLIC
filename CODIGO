@@ -525,7 +525,7 @@ void opcion_menu(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_
             cout << "===================BIENVENIDO A LA LIBRERÍA MORALEJA, " << usuario_datos[0].datos_usuario.nombre_apellido << "===================" << endl;
         }
     }
-    cout << "\n\t\t\t Escoga opcion para registrar" << endl;
+    cout << "\n\t\t\t Escoja opcion para registrar" << endl;
     cout << "\t\t\t-----------------------------------" << endl;
     cout << CELESTE "\t\t\t Opcion 1: SEDE MIRAFLORES " << endl;
     cout << "\t\t\t Opcion 2: SEDE SAN ISIDRO " << endl;
