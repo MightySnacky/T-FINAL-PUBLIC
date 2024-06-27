@@ -404,8 +404,8 @@ void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_da
 {
     system("cls");
     bool numero = true;
-    bool gmail_repetido = false;
-    bool dni_repetido = false;
+    bool gmail_repetido = true;
+    bool dni_repetido = true;
     bool esgmail;
     int iterador = 0;
     int cantidad_libros_vendidos = 0;
@@ -2449,8 +2449,11 @@ void delivery(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_ven
                 cout << "\t\t\t->" << RESET; cin >> mes_vencimiento;
             }
         } while (mes_vencimiento < 0 || mes_vencimiento>12);
-        cout << "\t\t\tINGRESE NUMERO DE LA TARJETA" << endl;
-        cout << "\t\t\t->"; cin >> numero_tarjeta;
+        do
+        {
+            cout << "\t\t\tINGRESE NUMERO DE LA TARJETA" << endl;
+            cout << "\t\t\t->"; cin >> numero_tarjeta;
+        } while (numero_tarjeta.length()!=16);        
         do
         {
             cout << "\t\t\tINGRESE AÑO DE VENCIMIENTO:" << endl;
