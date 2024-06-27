@@ -8,6 +8,7 @@
 #include<iomanip>//setw
 #include<clocale>//setlocale
 #include<algorithm>//sort
+#include <conio.h>
 #define VERDE "\033[32m"
 #define RESET "\033[0m"
 #define AZUL "\033[34m"
@@ -401,6 +402,7 @@ void generacion_stock(datos_venta* stock)
 }
 void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_venta* el_stock, int* cantidad_mangas_ya_vendidos, int* cantidad_comics_ya_vendidos, datos_venta* ventas_generales)
 {
+    system("cls");
     bool numero = true;
     bool gmail_repetido = false;
     bool dni_repetido = false;
@@ -416,17 +418,17 @@ void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_da
         cantidad_libros_vendidos += cantidad_comics_ya_vendidos[i];
     }
     usuario_datos = new datos_venta[1];
-    cout << "===================BIENVENIDO/A A LIBRERÍA MULTILIBROS===================";
+    cout << "\t\t===================BIENVENIDO/A A LA LIBRERÍA MORALEJA===================";
     for (int i = 0; i < 1; i++)
     {
-        cout << CELESTE << "\n\t\tIngrese su Nombre y Apellido: " << RESET;
+        cout << CELESTE << "\n\t\t\t\tIngrese su Nombre y Apellido: " << RESET;
         getline(cin, usuario_datos[i].datos_usuario.nombre_apellido);
         validar(usuario_datos[i].datos_usuario.nombre_apellido);
         while (validar(usuario_datos[i].datos_usuario.nombre_apellido) == 0)
         {
 
-            cout << ROJO << "\t\t\tINGRESE SOLO LETRAS" << RESET << endl;
-            cout << CELESTE << "\t\tIngrese su Nombre y Apellido:" << RESET;
+            cout << ROJO << "\t\t\t\tINGRESE SOLO LETRAS" << RESET << endl;
+            cout << CELESTE << "\t\t\t\tIngrese su Nombre y Apellido:" << RESET;
             getline(cin, usuario_datos[i].datos_usuario.nombre_apellido);
 
         }
@@ -435,12 +437,12 @@ void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_da
             iterador = 0;
             numero = true;
             dni_repetido = true;
-            cout << CELESTE << "\t\tIngrese su DNI: " << RESET; getline(cin, usuario_datos[i].datos_usuario.dni);
+            cout << CELESTE << "\t\t\t\tIngrese su DNI: " << RESET; getline(cin, usuario_datos[i].datos_usuario.dni);
             for (int i = 1; i < cantidad_libros_vendidos + 1; i++)
             {
                 if (ventas_generales[i].datos_usuario.dni == venta_unitaria[0].datos_usuario.dni)
                 {
-                    cout << ROJO << "\t\tDNI YA REGISTRADO" << RESET << endl;
+                    cout << ROJO << "\t\t\t\tDNI YA REGISTRADO" << RESET << endl;
                     dni_repetido = false;
                 }
             }
@@ -454,19 +456,19 @@ void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_da
                 }
                 else
                 {
-                    cout << ROJO << "\t\t\tINGRESE SOLO NUMEROS" << RESET << endl;
+                    cout << ROJO << "\t\t\t\tINGRESE SOLO NUMEROS" << RESET << endl;
                     numero = false;
                 }
             }
             if (usuario_datos[0].datos_usuario.dni.length() != 8)
             {
-                cout << ROJO "\t\t\tINGRESE 8 DÍGITOS" << endl << RESET;
+                cout << ROJO "\t\t\t\tINGRESE 8 DÍGITOS" << endl << RESET;
             }
 
         } while (!numero || !dni_repetido || usuario_datos[0].datos_usuario.dni.length() != 8);
         do
         {
-            cout << CELESTE << "\t\tIngrese su sexo (M o F): " << RESET;
+            cout << CELESTE << "\t\t\t\tIngrese su sexo (M o F): " << RESET;
             cin >> usuario_datos[i].datos_usuario.sexo;
             if (usuario_datos[i].datos_usuario.sexo == "m")
             {
@@ -482,7 +484,7 @@ void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_da
             char caracter;
             esgmail = true;
             gmail_repetido = true;
-            cout << CELESTE << "\t\tIngrese su correo electronico: " << RESET; cin >> usuario_datos[i].datos_usuario.correo;
+            cout << CELESTE << "\t\t\t\tIngrese su correo electronico: " << RESET; cin >> usuario_datos[i].datos_usuario.correo;
             for (int i = 0; i < usuario_datos[0].datos_usuario.correo.length(); i++)
             {
                 caracter = usuario_datos[0].datos_usuario.correo[i];
@@ -500,7 +502,7 @@ void registro_nuevo_usuario(datos_venta* venta_unitaria, datos_venta* usuario_da
             {
                 if (ventas_generales[i].datos_usuario.correo == venta_unitaria[0].datos_usuario.correo)
                 {
-                    cout << ROJO << "\t\t\tCORREO YA REGISTRADO" << RESET << endl;
+                    cout << ROJO << "\t\t\t\tCORREO YA REGISTRADO" << RESET << endl;
                     gmail_repetido = false;
                 }
             }
@@ -520,7 +522,7 @@ void opcion_menu(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_
         {
             generacion_stock(el_stock);
             cout << "\n";
-            cout << "===================BIENVENIDO A LIBRERIA MULTILIBROS, " << usuario_datos[0].datos_usuario.nombre_apellido << "===================" << endl;
+            cout << "===================BIENVENIDO A LA LIBRERÍA MORALEJA, " << usuario_datos[0].datos_usuario.nombre_apellido << "===================" << endl;
         }
     }
     cout << "\n\t\t\t Escoga opcion para registrar" << endl;
@@ -1127,7 +1129,7 @@ void comic(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_venta*
             cout << CELESTE << "\t\t\tOPCION 1: SI" << endl;
             cout << "\t\t\tOPCION 2: NO" << RESET << endl;
             cout << "\t\t\t-----------------------------------" << endl;
-            cout << "\t\t\t->";cin >> opcion_confirmar;
+            cout << "\t\t\t->"; cin >> opcion_confirmar;
             if (opcion_confirmar == 1)
             {
                 do
@@ -1180,7 +1182,7 @@ void comic(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_venta*
             cout << CELESTE << "\t\t\tOPCION 1: SI" << endl;
             cout << "\t\t\tOPCION 2: NO" << RESET << endl;
             cout << "\t\t\t-----------------------------------" << endl;
-            cout << "\t\t\t->";cin >> opcion_confirmar;
+            cout << "\t\t\t->"; cin >> opcion_confirmar;
             if (opcion_confirmar == 1)
             {
                 do
@@ -1247,7 +1249,7 @@ void comic(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_venta*
             cout << CELESTE << "\t\t\tOPCION 1: SI" << endl;
             cout << "\t\t\tOPCION 2: NO" << RESET << endl;
             cout << "\t\t\t-----------------------------------" << endl;
-            cout << "\t\t\t->";cin >> opcion_confirmar;
+            cout << "\t\t\t->"; cin >> opcion_confirmar;
             if (opcion_confirmar == 1)
             {
                 do
@@ -1300,7 +1302,7 @@ void comic(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_venta*
             cout << CELESTE << "\t\t\tOPCION 1: SI" << endl;
             cout << "\t\t\tOPCION 2: NO" << RESET << endl;
             cout << "\t\t\t-----------------------------------" << endl;
-            cout << "\t\t\t->";cin >> opcion_confirmar;
+            cout << "\t\t\t->"; cin >> opcion_confirmar;
             if (opcion_confirmar == 1)
             {
                 do
@@ -1353,7 +1355,7 @@ void comic(datos_venta* venta_unitaria, datos_venta* usuario_datos, datos_venta*
             cout << CELESTE << "\t\t\tOPCION 1: SI" << endl;
             cout << "\t\t\tOPCION 2: NO" << RESET << endl;
             cout << "\t\t\t-----------------------------------" << endl;
-            cout << "\t\t\t->";cin >> opcion_confirmar;
+            cout << "\t\t\t->"; cin >> opcion_confirmar;
             if (opcion_confirmar == 1)
             {
                 do
@@ -2590,7 +2592,7 @@ void opcion_continuar(datos_venta* venta_unitaria, datos_venta* usuario_datos, d
         cout << CELESTE << "====================================================================" << RESET << endl;
         do
         {
-            cout << "\t\t\t->";cin >> opcion;
+            cout << "\t\t\t->"; cin >> opcion;
         } while (opcion < 1 || opcion>7);
         switch (opcion)
         {
@@ -2624,7 +2626,7 @@ void opcion_continuar(datos_venta* venta_unitaria, datos_venta* usuario_datos, d
             cout << endl;
             opcion_continuar(venta_unitaria, usuario_datos, el_stock, cantidad_mangas_ya_vendidos, cantidad_comics_ya_vendidos, ventas_generales);
         case 7:
-            cout << LAZUL << "\t\t------MUCHAS GRACIAS POR SU PREFERENCIA------" <<endl<< RESET;
+            cout << LAZUL << "\t\t------MUCHAS GRACIAS POR SU PREFERENCIA------" << endl << RESET;
             cout << "\t\tGRUPO 2" << endl;
             cout << NARANJA"----------------------------" << RESET << endl;
             cout << "\t\tINTEGRANTES: \n";
@@ -2855,7 +2857,7 @@ void reporte_3(datos_venta* ventas_generales, int* cantidad_mangas_vendidos, int
     cout << "===================================================" << endl;
     do
     {
-        cout << "\t\t\t->";cin >> Opcion;
+        cout << "\t\t\t->"; cin >> Opcion;
     } while (Opcion < 1 || Opcion>2);
     string* arreglo_de_nombres;
     arreglo_de_nombres = new string[cantidad_libros_vendidos];
@@ -2957,7 +2959,7 @@ void reporte_4(datos_venta* ventas_generales, int* cantidad_mangas_vendidos, int
     cout << "===================================================" << endl;
     do
     {
-        cout << "\t\t\t->";cin >> Opcion;
+        cout << "\t\t\t->"; cin >> Opcion;
     } while (Opcion < 1 || Opcion>3);
     switch (Opcion)
     {
@@ -3192,9 +3194,6 @@ int main()
         << AMARILLO << "MMMMMMMMMMMMMMMMMMMMMMMMM" << RESET << "Oc:::ccc::::::::::::::::::::::::, ....'....,::::::::::::::::::::::::clcc::cO" << AMARILLO << "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n"
         << AMARILLO << "MMMMMMMMMMMMMMMMMMMMMMMMMWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" << RESET << "Kd : '...' : dK" << AMARILLO << "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n"
         << AMARILLO << "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWX00KXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" << RESET;
-    string a;
-    cin >> a;
-    system("cls");
-    cin.ignore();
+    _getch();
     registro_nuevo_usuario(venta_unitaria, usuario_datos, el_stock, cantidad_mangas_ya_vendidos, cantidad_comics_ya_vendidos, ventas_generales);
 }
